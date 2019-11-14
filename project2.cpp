@@ -4,6 +4,7 @@
 #include <fstream>
 #include <map>
 
+// adds words to a vector and returns it
 std::vector<std::string> file_import(void) {
   std::ifstream input("common_passwords.txt");
   std::vector<std::string> dictionary;
@@ -19,6 +20,7 @@ std::vector<std::string> file_import(void) {
   return dictionary;
 }
 
+// checks if word is similar
 std::map<std::string, int> check_validity(
     std::string passcode, std::string list_word,
     std::map<std::string, int>& map_to_return) {
@@ -35,6 +37,7 @@ std::map<std::string, int> check_validity(
   return map_to_return;
 }
 
+// prints out similar words
 void print(std::map<std::string, int>& map_of_words, int number,
            std::string word) {
   std::cout << "The most similar passwords to " << word << " are:" << std::endl;
